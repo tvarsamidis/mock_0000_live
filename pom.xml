@@ -31,7 +31,7 @@
             WARNING: A Java agent has been loaded dynamically
             WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
             org.mockito.exceptions.base.MockitoException: Unable to initialize @Spy annotated field 'phoneService'.
-            Mockito cannot mock this class: class gr.codehub.mockito.p07_spiespies.PhoneService.
+            Mockito cannot q05_mock this class: class gr.codehub.mockito.p07_spiespies.PhoneService.
             -->
             <version>4.8.1</version>
             <scope>test</scope>
@@ -56,6 +56,9 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
+                <!-- configuration>
+                    <argLine>-XX:+EnableDynamicAgentLoading -Xshare:off</argLine>
+                </configuration-->
             </plugin>
         </plugins>
     </build>
