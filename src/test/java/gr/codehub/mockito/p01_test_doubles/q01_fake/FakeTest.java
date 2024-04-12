@@ -14,15 +14,35 @@ import static org.mockito.Mockito.when;
 
 public class FakeTest {
 
+//    @Test
+//    public void testFake(){
+//        PhoneRepository phoneRepository = new FakePhoneRepository();
+//        PhoneService phoneService = new PhoneService(phoneRepository);
+//
+//        phoneService.addPhone(new Phone("1234", "CodeHub Pro", 300, LocalDate.now()));
+//        phoneService.addPhone(new Phone("1235", "CodeHub Standard", 250, LocalDate.now()));
+//
+//        assertEquals(2, phoneService.findNumberOfPhones());
+//    }
+
     @Test
-    public void testFake(){
-        PhoneRepository phoneRepository = new FakePhoneRepository();
+    public void testFakeWithMockito() {
+        PhoneRepository phoneRepository = mock(PhoneRepository.class);
         PhoneService phoneService = new PhoneService(phoneRepository);
 
-        phoneService.addPhone(new Phone("1234", "CodeHub Pro", 300, LocalDate.now()));
-        phoneService.addPhone(new Phone("1235", "CodeHub Standard", 250, LocalDate.now()));
+        Phone phone1 = new Phone("1234", "CodeHub Pro", 300, LocalDate.now());
+        Phone phone2 = new Phone("1235", "CodeHub Standard", 250, LocalDate.now());
+        List<Phone> phones = new ArrayList<>();
+        phones.add(phone1);
+        phones.add(phone2);
+
+        phoneService.addPhone(phone1);
+        phoneService.addPhone(phone2);
+
+        when(phoneRepository.findAll()).thenReturn(phones);
 
         assertEquals(2, phoneService.findNumberOfPhones());
+
     }
 
 }
