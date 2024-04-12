@@ -12,7 +12,8 @@ public class DummyTest {
     @Test
     public void testFake(){
         PhoneRepository phoneRepository = new DummyPhoneRepository();
-        PhoneService phoneService = new PhoneService(phoneRepository);
+        EmailService emailService = new DummyEmailService();
+        PhoneService phoneService = new PhoneService(phoneRepository, emailService);
 
         phoneService.addPhone(new Phone("1234", "CodeHub Pro", 300, LocalDate.now()));
         phoneService.addPhone(new Phone("1235", "CodeHub Standard", 250, LocalDate.now()));
