@@ -1,0 +1,37 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+
+# Logs and databases #
+*.log
+**/logs/
+
+# OS generated files #
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Maven #
+target
+pom.xml.versionsBackup
+dependency-reduced-pom.xml
+**/target/
+
+# JetBrains #
+*.iml
+.idea/**
+*.ipr
+*.iws
+**/out/
+.idea_modules/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Other #
+*.*~
+*.orig
+.gitconfig
+docker/data/**
+hs_err_pid*
