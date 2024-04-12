@@ -1,15 +1,15 @@
-package gr.codehub.mockito.p01_test_doubles.q01_fake;
+package gr.codehub.mockito.p01_test_doubles.q02_dummy;
 
 import java.util.List;
 
 public class PhoneService {
 
     private final PhoneRepository phoneRepository;
-
-
-
-    public PhoneService(PhoneRepository phoneRepository1) {
+    private final EmailService emailService;
+    
+    public PhoneService(PhoneRepository phoneRepository1, EmailService emailService1) {
         phoneRepository = phoneRepository1;
+        emailService = emailService1;
     }
 
     public void addPhone(Phone phone) {
