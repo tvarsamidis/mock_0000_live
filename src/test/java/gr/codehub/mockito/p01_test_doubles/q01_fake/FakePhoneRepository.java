@@ -8,4 +8,15 @@ import java.util.Map;
 public class FakePhoneRepository implements PhoneRepository {
 
 
+    Map<String, Phone> phoneStore = new HashMap<>();
+
+    @Override
+    public void save(Phone phone) {
+        phoneStore.put(phone.getPhoneId(), phone);
+    }
+
+    @Override
+    public List<Phone> findAll() {
+        return new ArrayList<>(phoneStore.values());
+    }
 }
