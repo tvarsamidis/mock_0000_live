@@ -15,6 +15,6 @@ public class StubTest {
         List<Phone> newPhonesWithAppliedDiscount = phoneService.getNewPhonesWithAppliedDiscount(10, 7);
         assertEquals(2, newPhonesWithAppliedDiscount.size());
         assertEquals(540, newPhonesWithAppliedDiscount.get(0).getPrice());
-        assertEquals(450, newPhonesWithAppliedDiscount.get(0).getPrice());
+        assertEquals(450, newPhonesWithAppliedDiscount.get(1).getPrice());
     }
 }
